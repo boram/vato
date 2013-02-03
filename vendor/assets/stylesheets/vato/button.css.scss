@@ -1,0 +1,71 @@
+@mixin vato-button-core($border-radius: 0) {
+  position: relative;
+  display: inline-block;
+  height: 2em;
+  padding: 0.5em 1em;
+  border-collapse: collapse;
+  border-radius: $border-radius;
+  text-decoration: none;
+  vertical-align: middle;
+  line-height: 1em;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  overflow: visible;
+  zoom: 1; /* IE hack */
+
+  &:hover, &:focus {
+    z-index: 100;
+  }
+
+  &:active, &.active {
+    z-index: 9;
+  }
+}
+
+@mixin vato-button($color: 'flat-white', $border-radius: 0) {
+  @include vato-button-core($border-radius);
+  @extend .vato-clean-#{$color};
+}
+
+@mixin vato-icon($icon: home, $icon-position: left, $icon-padding: 2.3em) {
+  @extend .vato-icon-#{$icon};
+
+  @if $icon-position == left {
+    padding-left: $icon-padding;
+
+    &:before {
+      left: .8em;
+      right: auto;
+    }
+  } @else if $icon-position == right {
+    padding-right: $icon-padding;
+
+    &:before {
+      left: auto;
+      right: .8em;
+    }
+  }
+}
+
+@mixin vato-button-group($border-radius: 0) {
+  @include clearfix;
+
+  > a {
+    border-radius: 0;
+    margin-right: 0;
+    margin-left: -1px;
+    float: left;
+
+    &:first-child {
+      border-top-left-radius: $border-radius;
+      border-bottom-left-radius: $border-radius;
+      margin-left: 0;
+    }
+
+    &:last-child {
+      border-top-right-radius: $border-radius;
+      border-bottom-right-radius: $border-radius;
+    }
+  }
+}
