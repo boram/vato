@@ -19,5 +19,4 @@ Gem::Specification.new do |gem|
 
   gem.add_dependency 'railties', '>= 3.1'
   gem.add_dependency 'sass', '>= 3.2.0'
-  gem.add_dependency 'font_awesome', '>= 3.2.0'
 end

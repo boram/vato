@@ -16,7 +16,3 @@ end
 unless defined?(Sass)
   require 'sass'
 end
-
-unless defined?(FontAwesome)
-  require 'font_awesome'
-end
