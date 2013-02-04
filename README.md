@@ -75,7 +75,7 @@ nav {
 
 The `vato-button-group` mixin takes the border radius as its argument and defaults to `0`.
 
-The mixin must also be placed after the button styles to ensure border radii and positioning directives on the individual buttons overridden by the group style.
+The mixin must be placed after the button styles to ensure border radii and positioning directives on the individual buttons overridden by the group style.
 
 
 ## Contributing
