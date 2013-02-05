@@ -23,29 +23,9 @@
   }
 }
 
-@mixin vato-button($color: 'flat-white', $border-radius: 0) {
+@mixin vato-button($style: gradient, $color: flat-white, $border-radius: 0) {
   @include vato-button-core($border-radius);
-  @extend .vato-clean-#{$color};
-}
-
-@mixin vato-icon($icon: home, $icon-position: left, $icon-padding: 2.3em) {
-  @extend .vato-icon-#{$icon};
-
-  @if $icon-position == left {
-    padding-left: $icon-padding;
-
-    &:before {
-      left: .8em;
-      right: auto;
-    }
-  } @else if $icon-position == right {
-    padding-right: $icon-padding;
-
-    &:before {
-      left: auto;
-      right: .8em;
-    }
-  }
+  @extend .vato-#{$style}-#{$color};
 }
 
 @mixin vato-button-group($border-radius: 0) {
